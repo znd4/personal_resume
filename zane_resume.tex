@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wilson Resume/CV
+% XeLaTeX Template
+% Version 1.0 (22/1/2015)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Howard Wilson (https://github.com/watsonbox/cv_template_2004) with
+% extensive modifications by Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article} % Default font size
+
+
+
+\usepackage{tabularx}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{zref-savepos}
+\usepackage[none]{hyphenat}
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.385 \hsize}X}
+\newcolumntype{m}{>{\hsize=.015\hsize}X}
+% \setmainfont{Liberation Sans}
+\setmainfont{Arial}
+%----------------------------------------------------------------------------------------
+\addtolength{\parskip}{-0.5mm}
+
+\definecolor{resume_green}{HTML}{3FBB69}
+
+\begin{document}
+
+
+\newcounter{NoTableEntry}
+\renewcommand*{\theNoTableEntry}{NTE-\the\value{NoTableEntry}}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\newcommand{\DrawLine}[3][]{%
+    \begin{tikzpicture}[overlay,remember picture]
+        \draw [#1] ($(#2)+(0,0.6ex)$) -- ($(#3)+(0,0.6ex)$);
+    \end{tikzpicture}%
+}%
+\newcommand{\resumeRow}[2]{%
+    \begin{tabularx}{\textwidth}{smb}
+        #1
+        &~&
+        #2
+    \end{tabularx}
+}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%      END PREAMBLE       %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \title{Zane Dufour - Software Engineer} % Print the main header
+~ % For some reason, this tilde is important (for keeping everything vertically justified)
+% \maketitle
+\begin{table}
+    \center
+    \resumeRow{
+        % \toprule
+        \begin{Huge}
+            ~\newline
+        \end{Huge}
+        \textcolor{resume_green}{MOBILE} \newline
+        +1(310)600-8638
+        \newline\newline
+        \textcolor{resume_green}{EMAIL} \newline
+        zanedufour@berkeley.edu 
+    }{
+        \textcolor{resume_green}{\Huge\bf Zane Dufour}   
+        \newline
+        \newline
+        I intend to pursue a junior-level software engineering position. 
+    }
+    \\
+    \resumeRow{
+        {\large ~\newline}
+        {\tiny ~\newline}
+        UC Berkeley, \newline
+        May 2017
+    }{
+        \textcolor{resume_green}{\large EDUCATION}\newline
+        {\tiny ~\newline}
+        Double Bachelor's -- Applied Math and Physics\newline
+        GPA 3.4
+    }
+    \\\vspace{.5cm}
+    \resumeRow{
+        \tikzmark{StartA}\hspace*{\fill}\tikzmark{EndA}
+    }{
+        \textcolor{resume_green}{\large EXPERIENCE}
+            % \tikz[baseline=-0.5ex]\draw[thick, dotted] (1,0) -- (5,0);
+        \hspace{3em}\tikzmark{StartB} \hspace*{\fill}\tikzmark{EndB}
+    }
+    \DrawLine[thick, dotted]{StartA}{EndA}
+    \DrawLine[thick, dotted]{StartB}{EndB}
+    \\
+    \resumeRow{
+        Ford Motor Company \newline
+        Analytics Developer \newline
+        Dearborn, MI \newline
+        November 2017 - 
+    }{
+        While working at Ford, I worked to automate steps in my team's model creation process to accelerate the creation of likelihood-to-purchase models. Since then, I have been working on a concept-to-production model development pipeline utilizing Python and Spark to build and deploy models at scale.
+    }
+    \\\vspace{.3cm}
+    \resumeRow{
+        Disney Imagineering \newline
+        Software Imagineer \newline
+        Glendale, CA \newline
+        June-September 2017
+    }{
+        While at Disney, I developed software used for projection mapping in Disney parks and resorts. I built a continuous integration system for multiple interdependent applications used for diferent parts of the projection mapping pipeline.
+    }
+    \\\vspace{.3cm}
+    \resumeRow{
+        Intel Corporation\newline
+        Design Automation Intern\newline
+        Santa Clara, CA\newline
+        February-August 2016
+    }{
+        During this six month internship at Intel, I developed manufacturing and design tools for the Silicon Photonics group. I built an Exception-handler and a local database client. During this internship I learned about maintaining a large code base and writing reusable code.
+    }
+    \\\vspace{.3cm}
+    \resumeRow{
+        UC Berkeley\newline
+        UG Research Assistant\newline
+        Computational Geometry\newline
+        Summer 2015 - Fall 2016
+    }{
+        Scripted a polygonal geometry morpher in the software package Houdini while working under the instruction of Professor Philip Marcus. Was most recently working on surface parameterization.
+    }
+\end{table}
+~
+
+%-------------------------------------------------------------------------
+
+\end{document}
