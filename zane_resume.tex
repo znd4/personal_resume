@@ -24,7 +24,14 @@
 
 
 \usepackage{tabularx}
-\usepackage[margin=0.8in]{geometry}
+% \usepackage[margin=0.8in]{geometry}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-1.0in}
+\addtolength{\textheight}{4.0in}
+
 \usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{array}
@@ -34,7 +41,13 @@
 \usepackage[none]{hyphenat}
 
 \newcolumntype{b}{X}
-\newcolumntype{s}{>{\hsize=.385 \hsize}X}
+% \newcolumntype{s}{>{\hsize=.385\hsize\raggedright\let\newline\\\arraybackslash\hspace{0pt}
+\newcolumntype{s}{>{\hsize=.385\hsize\raggedright
+                    % \let\newline\\
+                    \arraybackslash
+                    % \hspace{0pt}
+}X}
+% \newcolumntype{s}{>{\hsize=.385 \hsize}X}
 \newcolumntype{m}{>{\hsize=.015\hsize}X}
 % \setmainfont{Liberation Sans}
 \setmainfont{Arial}
@@ -45,6 +58,7 @@
 
 \begin{document}
 
+\pagenumbering{gobble}
 
 \newcounter{NoTableEntry}
 \renewcommand*{\theNoTableEntry}{NTE-\the\value{NoTableEntry}}
@@ -62,22 +76,34 @@
         #2
     \end{tabularx}
 }%
+
+\newcommand{\divider}[1]{%
+    ~\newline
+    \resumeRow{
+        \tikzmark{StartA}\hspace*{\fill}\tikzmark{EndA}
+    }{
+        \textcolor{resume_green}{\large #1}
+            % \tikz[baseline=-0.5ex]\draw[thick, dotted] (1,0) -- (5,0);
+        \hspace{3em}\tikzmark{StartB} \hspace*{\fill}\tikzmark{EndB}
+    }
+    \DrawLine[thick, dotted]{StartA}{EndA}
+    \DrawLine[thick, dotted]{StartB}{EndB}
+}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%      END PREAMBLE       %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \title{Zane Dufour - Software Engineer} % Print the main header
-~ % For some reason, this tilde is important (for keeping everything vertically justified)
+~% For some reason, this tilde is important (for keeping everything vertically justified)
 % \maketitle
 \begin{table}
     \center
     \resumeRow{
-        % \toprule
         \begin{Huge}
             ~\newline
         \end{Huge}
         \textcolor{resume_green}{MOBILE} \newline
-        +1(310)600-8638
+        +1 (310) 600-8638
         \newline\newline
         \textcolor{resume_green}{EMAIL} \newline
         zanedufour@berkeley.edu 
@@ -88,27 +114,20 @@
         I intend to pursue a junior-level software engineering position. 
     }
     \\
+    %&&&&&&&&&&&&&&%&&&&&&&&&&&&&&%&&&&&&&&&&&&&&
+    %&&&&&&&&&&&&&&  EDUCATION  %&&&&&&&&&&&&&&%&
+    %&&&&&&&&&&&&&&%&&&&&&&&&&&&&&%&&&&&&&&&&&&&&
+    \divider{EDUCATION}
+    \\
     \resumeRow{
-        {\large ~\newline}
-        {\tiny ~\newline}
         UC Berkeley, \newline
         May 2017
     }{
-        \textcolor{resume_green}{\large EDUCATION}\newline
-        {\tiny ~\newline}
         Double Bachelor's -- Applied Math and Physics\newline
         GPA 3.4
     }
-    \\\vspace{.5cm}
-    \resumeRow{
-        \tikzmark{StartA}\hspace*{\fill}\tikzmark{EndA}
-    }{
-        \textcolor{resume_green}{\large EXPERIENCE}
-            % \tikz[baseline=-0.5ex]\draw[thick, dotted] (1,0) -- (5,0);
-        \hspace{3em}\tikzmark{StartB} \hspace*{\fill}\tikzmark{EndB}
-    }
-    \DrawLine[thick, dotted]{StartA}{EndA}
-    \DrawLine[thick, dotted]{StartB}{EndB}
+    \\
+    \divider{EXPERIENCE}
     \\
     \resumeRow{
         Ford Motor Company \newline
@@ -116,7 +135,8 @@
         Dearborn, MI \newline
         November 2017 - 
     }{
-        While working at Ford, I worked to automate steps in my team's model creation process to accelerate the creation of likelihood-to-purchase models. Since then, I have been working on a concept-to-production model development pipeline utilizing Python and Spark to build and deploy models at scale.
+        While working at Ford, I worked to automate steps in my team's 
+        model creation process to accelerate the creation of likelihood-to-purchase models. Since then, I have been working on a concept-to-production model development pipeline utilizing Python and Spark to build and deploy models at scale.
     }
     \\\vspace{.3cm}
     \resumeRow{
@@ -139,12 +159,40 @@
     \\\vspace{.3cm}
     \resumeRow{
         UC Berkeley\newline
-        UG Research Assistant\newline
+        Research Assistant\newline
         Computational Geometry\newline
         Summer 2015 - Fall 2016
     }{
         Scripted a polygonal geometry morpher in the software package Houdini while working under the instruction of Professor Philip Marcus. Was most recently working on surface parameterization.
     }
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%   COURSEWORK    %%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \\
+    \divider{COURSES}
+    \\
+    \resumeRow{
+        Machine Learning
+    }{
+        Building ML algorithms from scratch in Python w/ NumPy.
+        Character Recognition, SVMs, Neural Networks,
+        Gausian Discriminant Analysis, Decision Trees etc.
+    }
+    \\\vspace{.3cm}
+    \resumeRow{
+        Spectral Methods in Computational Fluid Dynamics (Graduate)
+    }{
+        Using NumPy to find numerical solutions to Poisson and Navier-Stokes
+        Equations; Runge-Kutta finite step methods; Fast Fourier and Chebyshev transforms
+    }
+    \\\vspace{.3cm}
+    \resumeRow{
+        Advanced Linear Algebra
+    }{
+        Diagonalizing Matrices; Isomorphic Vector Spaces; Inner product
+        spaces; change of basis; Singular Value Decompositions
+    }
+
 \end{table}
 ~
 
