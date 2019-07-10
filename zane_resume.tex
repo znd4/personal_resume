@@ -25,12 +25,12 @@
 
 \usepackage{tabularx}
 % \usepackage[margin=0.8in]{geometry}
-\addtolength{\oddsidemargin}{-.875in}
-\addtolength{\evensidemargin}{-.875in}
-\addtolength{\textwidth}{1.75in}
+\addtolength{\oddsidemargin}{-1.0in}
+\addtolength{\evensidemargin}{-1.0in}
+\addtolength{\textwidth}{2.0in}
 
 \addtolength{\topmargin}{-1.0in}
-\addtolength{\textheight}{4.0in}
+\addtolength{\textheight}{6.0in}
 
 \usepackage{fontspec}
 \usepackage{xcolor}
@@ -49,8 +49,8 @@
 }X}
 % \newcolumntype{s}{>{\hsize=.385 \hsize}X}
 \newcolumntype{m}{>{\hsize=.015\hsize}X}
-% \setmainfont{Liberation Sans}
-\setmainfont{Arial}
+\setmainfont{Liberation Sans}
+% \setmainfont{Arial}
 %----------------------------------------------------------------------------------------
 \addtolength{\parskip}{-0.5mm}
 
@@ -130,17 +130,22 @@
     \divider{EXPERIENCE}
     \\
     \resumeRow{
-        Ford Motor Company \newline
+        \textbf{Ford Motor Company} \newline
         Analytics Developer \newline
         Dearborn, MI \newline
-        November 2017 - 
+        November 2017 - Present
     }{
-        While working at Ford, I worked to automate steps in my team's 
-        model creation process to accelerate the creation of likelihood-to-purchase models. Since then, I have been working on a concept-to-production model development pipeline utilizing Python and Spark to build and deploy models at scale.
+        While on a small modeling team, I developed likelihood-to-purchase
+        models on hundreds of millions of individuals. I refactored the
+        team's modeling pipeline -- I helped the team adopt Github for version
+        control -- and moved data transformation code from Jupyter notebooks
+        into abstracted functions. Created a python package that simplified
+        connecting to Ford's `pyspark` distributed computing platform.
+        Utilized test-driven-development practices while building out a suite of tools to simplify machine learning workflows, including a web application and multiple python libraries. Set up dependency management and automated testing using conda build and tox.  While working on the customer analytics team,used plotly to create interactive data visualizations for analytics reports.
     }
     \\\vspace{.3cm}
     \resumeRow{
-        Disney Imagineering \newline
+        \textbf{Disney Imagineering} \newline
         Software Engineer \newline
         Glendale, CA \newline
         June-September 2017
@@ -149,7 +154,7 @@
     }
     \\\vspace{.3cm}
     \resumeRow{
-        Intel Corporation\newline
+        \textbf{Intel Corporation}\newline
         Software Engineering Intern\newline
         Santa Clara, CA\newline
         February-August 2016
@@ -158,12 +163,13 @@
     }
     \\\vspace{.3cm}
     \resumeRow{
-        UC Berkeley\newline
+        \textbf{UC Berkeley}\newline
         Research Assistant\newline
         Computational Geometry\newline
         Summer 2015 - Fall 2016
     }{
-        Scripted a polygonal geometry morpher in the software package Houdini while working under the instruction of Professor Philip Marcus. Was most recently working on surface parameterization.
+        While working as an undergraduate research assistant, I worked on a
+        spectral geometry morpher in C++ and a Houdini tool for generating parameterized geometry.
     }
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%   COURSEWORK    %%%%%%%%%%%%%%%%%
@@ -201,7 +207,7 @@
     }
 
 \end{table}
-~
+% ~
 
 %-------------------------------------------------------------------------
 
