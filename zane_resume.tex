@@ -32,6 +32,7 @@
 \addtolength{\topmargin}{-1.0in}
 \addtolength{\textheight}{6.0in}
 
+\usepackage{hyperref}
 \usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{array}
@@ -106,13 +107,13 @@
         +1 (310) 600-8638
         \newline\newline
         \textcolor{resume_green}{EMAIL} \newline
-        zanedufour@berkeley.edu 
-    }{
-        \textcolor{resume_green}{\Huge\bf Zane Dufour}   
+        zanedufour@berkeley.edu
+        }{
+        \textcolor{resume_green}{\Huge\bf Zane Dufour}  
         \newline
         \newline
-        I intend to pursue junior-level software/data engineering positions. 
-    }
+        I intend to pursue junior-level software/data engineering positions.
+        }
     \\
     %&&&&&&&&&&&&&&%&&&&&&&&&&&&&&%&&&&&&&&&&&&&&
     %&&&&&&&&&&&&&&  EDUCATION  %&&&&&&&&&&&&&&%&
@@ -130,12 +131,22 @@
     \divider{EXPERIENCE}
     \\
     \resumeRow{
+        \textbf{Ford Motor Company}
+        \newline
+        Software Lead \newline
+        Dearborn, MI \newline
+        February 2020 - Present
+    }{
+        Works with project manager and product owner of Ford's machine learning platform modeling sub-team to prioritize developer enablement and feature development. Standardized team's container image management process. Streamlined python-dependency management by switching from pip to \href{https://python-poetry.org/}{poetry}
+    }
+    \\
+    \resumeRow{
         \textbf{Ford Motor Company} \newline
         Analytics Developer \newline
         Dearborn, MI \newline
-        November 2017 - Present
+        November 2017 - February 2020
     }{
-        While on a small modeling team, I developed likelihood-to-purchase models on hundreds of millions of individuals. I refactored the team's modeling pipeline -- I helped the team adopt Github for version control -- and moved data transformation code from Jupyter notebooks into abstracted functions. Created a python package that simplified connecting to Ford's pyspark distributed computing cluster. Utilized test-driven-development practices while building out a suite of tools to simplify machine learning workflows, including a web application and multiple python libraries. Set up dependency management and automated testing using conda build and tox. While working on the customer analytics team, used plotly to create interactive data visualizations for analytics reports.
+        Developed likelihood-to-purchase models for tens of millions of individuals. Helped the team adopt Github for version control. Created a python package to streamline the process of accessing pyspark computing resources. Successfully encouraged team to adopt test-driven-development and static code analysis for our python libraries and flask services.
     }
     \\\vspace{.3cm}
     \resumeRow{
@@ -180,8 +191,8 @@
     \resumeRow{
         \textbf{Spectral Methods in Computational Fluid Dynamics (Graduate)}
     }{
-        Used NumPy to find numerical solutions to Poisson and Navier-Stokes Equations. Implemented Runge-Kutta finite step methods, Fast Fourier and Chebyshev transforms. 
-    }
+        Used NumPy to find numerical solutions to Poisson and Navier-Stokes Equations. Implemented Runge-Kutta finite step methods, Fast Fourier and Chebyshev transforms.
+        }
     \\\vspace{.3cm}
     \resumeRow{
         \textbf{Advanced Linear Algebra}
