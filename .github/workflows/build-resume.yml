@@ -11,4 +11,4 @@ jobs:
         with:
           root_file: zane_resume.tex
           args: -xelatex -file-line-error -interaction=nonstopmode
-          extra_system_packages: fonts-liberation
+          extra_system_packages: ttf-liberation
