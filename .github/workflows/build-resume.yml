@@ -10,4 +10,5 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: zane_resume.tex
-          args: -file-line-error -interaction=nonstopmode
+          args: -xelatex -file-line-error -interaction=nonstopmode
+          extra_system_packages: fonts-liberation
