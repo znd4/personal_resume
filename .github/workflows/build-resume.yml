@@ -7,6 +7,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v1
       - name: Compile LaTeX document
+        id: compile_latex
         uses: xu-cheng/latex-action@master
         with:
           root_file: zane_resume.tex
@@ -39,7 +40,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./zane_resume.pdf
+          asset_path: ${{ steps.compile_latex.inputs.working_directory }}/zane_resume.pdf
           asset_name: zane_resume.pdf
           asset_content_type: application/pdf
       
