@@ -12,3 +12,13 @@ jobs:
           root_file: zane_resume.tex
           args: -xelatex -file-line-error -interaction=nonstopmode
           extra_system_packages: ttf-liberation
+      - name: Commit PDF
+        run: |
+          git config --local user.name "action@github.com"
+          git config --local user.name "Github Action"
+          git commit -m "Add Changes" -a
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      
