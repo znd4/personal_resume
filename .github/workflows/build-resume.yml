@@ -17,10 +17,12 @@ jobs:
         run: |
           git config --local user.name "action@github.com"
           git config --local user.name "Github Action"
+          git checkout gh-pages
           mv zane_resume.pdf docs/zane_resume.pdf
           git commit -m "Add Changes" -a
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
       
