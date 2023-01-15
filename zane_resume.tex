@@ -25,12 +25,12 @@
 
 \usepackage{tabularx}
 % \usepackage[margin=0.8in]{geometry}
-\addtolength{\oddsidemargin}{-1.0in}
-\addtolength{\evensidemargin}{-1.0in}
-\addtolength{\textwidth}{2.0in}
+\addtolength{\oddsidemargin}{-1.5in}
+\addtolength{\evensidemargin}{-1.5in}
+\addtolength{\textwidth}{3.0in}
 
 \addtolength{\topmargin}{-1.0in}
-\addtolength{\textheight}{6.0in}
+\addtolength{\textheight}{7.0in}
 
 \usepackage{hyperref}
 \usepackage{fontspec}
@@ -68,8 +68,8 @@
 
 \pagenumbering{gobble}
 
-\newcounter{NoTableEntry}
-\renewcommand*{\theNoTableEntry}{NTE-\the\value{NoTableEntry}}
+
+\newcommand{\code}[1]{\texttt{#1}}
 
 \newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
 \newcommand{\DrawLine}[3][]{%
@@ -91,7 +91,6 @@
 		\tikzmark{StartA}\hspace*{\fill}\tikzmark{EndA}
 	}{
 		\textcolor{resume_green}{\large #1}
-		% \tikz[baseline=-0.5ex]\draw[thick, dotted] (1,0) -- (5,0);
 		\hspace{3em}\tikzmark{StartB} \hspace*{\fill}\tikzmark{EndB}
 	}
 	\DrawLine[thick, dotted]{StartA}{EndA}
@@ -102,7 +101,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ~% For some reason, this tilde is important (for keeping everything vertically justified)
-% \maketitle
 \begin{table}
 	\center
 	\resumeRow{
@@ -118,7 +116,7 @@
 		\textcolor{resume_green}{\Huge\bf Zane Dufour}
 		\newline
 		\newline
-		I am a software engineer with a background in analytics and machine learning. I'm a huge fan and advocate of python, but I love learning new frameworks and languages (currently golang and lua). As a senior software engineer, I'm equally comfortable leading high-level architecture discussions, pairing with junior devs, and debugging annoying bugs. If you like reading \LaTeX , feel free to check out the \href{https://github.com/zdog234/personal_resume/blob/master/zane_resume.tex}{source for this resume}.
+		I am a software engineer with 5 years of experience in Software Development and Machine Learning. I'm a huge fan and advocate of python, but I love learning new frameworks and languages (currently golang and lua). As a senior engineer, I'm equally comfortable leading high-level architecture discussions, pairing with junior devs, and debugging problematic incidents. If you like reading \LaTeX , feel free to check out the \href{https://github.com/zdog234/personal_resume/blob/master/zane_resume.tex}{source for this resume}.
 	}
 	\\
 	\divider{EXPERIENCE}
@@ -130,7 +128,12 @@
 		Remote \newline
 		January 2022 - Present
 	}{
-		On the Climate Action squad, I maintained Aspiration's legacy Plant Your Change service while developing new revenue sources during a period of team downsizing. Worked with QA engineers to automate manual QA tasks. Expanded test coverage of critical AWS lambda functions.
+		Developed shared libraries and consumer+business-facing backend services.
+		This included working with go, kubernetes, terraform, and multiple AWS services.
+		Implemented a circleci orb for installing and running \code{pre-commit} hooks to enforce code quality standards.
+		Added end-to-end tests to our serverless functions, thereby ending a series of incidents where broken lambda configurations made it through our CI to deployment.
+		Improved application observability; integrated Datadog distributed tracing \& logging.
+		On multiple occasions, used snowflake queries to determine the cause and impact of production incidents.
 	}
 	\resumeRow{
 		\textbf{Ford Motor Company}
@@ -139,16 +142,16 @@
 		Dearborn, MI \newline
 		February 2020 - January 2022
 	}{
-		As the technical lead of the model-training-as-a-service product team within Ford's Mach1ML platform organization, I drove adoption of modern python development tools (poetry/pipenv, black, pre-commit, tox, etc.). Advocated the replacement of flask with fastapi for REST API development -- contributed a fastapi template to Ford's project bootstrapping tool. Implemented faster process for the approval of open-source python packages. Worked with tech leads for other product teams to plan inter-team integrations. Led the early development and design of the platform's python SDK. Worked hands-on with internal customers to onboard production Machine Learning use-cases.
+		As the technical lead of the model-training-as-a-service product team within Ford's Mach1ML platform organization, I drove adoption of modern python development tools (\code{poetry}/\code{pipenv}, \code{black}, \code{pre-commit}, \code{tox}, etc.). Championed the replacement of \code{flask} with \code{fastapi} for REST API development by adding a \code{fastapi} wrapper to the team's project bootstrapping tool. Significantly sped up the process for the review \& approval of pypi packages. Worked with other tech leads to plan cross-team integrations. Led the early development and design of the platform's python SDK. Worked hands-on with internal customers to onboard production Machine Learning use-cases. Mentored a large team of (~10) junior developers \& data scientists, with an eye towards documenting the solutions to recurring issues.
 	}
 	\\\vspace{.2cm}
 	\resumeRow{
 		\textbf{Ford Motor Company} \newline
-		ML Engineer \newline
+		Machine Learning Engineer \newline
 		Dearborn, MI \newline
 		November 2017 - February 2020
 	}{
-		Developed likelihood-to-purchase models for tens of millions of individuals. Helped the team adopt Github for version control. Created a python package to streamline the process of utilizing pyspark computing resources. Helped team adopt test-driven-development and static code analysis for our python libraries and flask services.
+		Developed likelihood-to-purchase models for tens of millions of consumers. Helped the team adopt Github for version control. Created and distributed a python package to streamline the process of instantiating a pyspark driver on Ford's High Performance Computing cluster. Drove adoption of test-driven-development and static code analysis for our python libraries and flask services.
 	}
 	\\\vspace{.3cm}
 	\resumeRow{
@@ -157,7 +160,7 @@
 		Glendale, CA \newline
 		June-September 2017
 	}{
-		While working in the Disney Imagineering Media and Art Pipeline group, I developed software used for projection mapping in Disney parks and resorts. I built a continuous integration system for multiple interdependent applications which were used for different parts of the projection mapping pipeline.
+		While working in the Disney Imagineering Media and Art Pipeline group, I developed software used for \href{https://en.wikipedia.org/wiki/Projection_mapping}{projection mapping} in Disney's parks and resorts. I built a continuous integration system for multiple interdependent applications which were used for different parts of the projection mapping pipeline.
 	}
 	\\\vspace{.3cm}
 	\resumeRow{
@@ -198,8 +201,8 @@
 	\resumeRow{Relevant Courses}{
 		Intro to Computer Science, Machine Learning,
 		Spectral Methods in Computational Fluid Dynamics (Graduate),
-		Advanced Linear Algebra,
-		Analytical Mechanics
+		Upper-Division Linear Algebra,
+		Numerical Methods
 	}
 	\\
 
