@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Publish document
         if: github.ref == 'refs/heads/main'
+        with:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh release create \
             main \
