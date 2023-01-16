@@ -33,8 +33,13 @@ jobs:
           name: resume
       - name: Publish resume
         run: |
-          gh release upload \
-            latest \
-            --repo '${{ github.repository }}' \
-            zane_resume.pdf \
-            --clobber
+          gh release create \
+            --latest \
+            --title "Latest Resume" \
+            --notes "Latest resume build from GitHub Actions" \
+            zane_resume.pdf
+          # gh release upload \
+          #   latest \
+          #   --repo '${{ github.repository }}' \
+          #   zane_resume.pdf \
+          #   --clobber
