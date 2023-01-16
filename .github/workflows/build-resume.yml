@@ -13,10 +13,25 @@ jobs:
           root_file: zane_resume.tex
           args: -xelatex -file-line-error -interaction=nonstopmode
           extra_system_packages: ttf-liberation
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: resume
+          retention-days: 1
+          path: zane_resume.pdf
+  release_pdf:
+    needs: build_latex
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment: main
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Download PDF artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: resume
       - name: Publish resume
-        if: github.ref == 'refs/heads/main'
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh release create \
             main \
