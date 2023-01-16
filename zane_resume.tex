@@ -48,11 +48,11 @@
     urlcolor=blue,
 }
 
-\newcolumntype{b}{X}
+\newcolumntype{b}{>{\raggedright}X}
 % \newcolumntype{s}{>{\hsize=.385\hsize\raggedright\let\newline\\\arraybackslash\hspace{0pt}
-\newcolumntype{s}{>{\hsize=.385\hsize\raggedright
+\newcolumntype{s}{>{\hsize=.385\hsize\raggedright%
                     % \let\newline\\
-                    \arraybackslash
+                    \arraybackslash%
                     % \hspace{0pt}
 }X}
 % \newcolumntype{s}{>{\hsize=.385 \hsize}X}
@@ -135,6 +135,7 @@
 		Improved application observability; integrated Datadog distributed tracing \& logging.
 		On multiple occasions, used snowflake queries to determine the cause and impact of production incidents.
 	}
+	\\\vspace{.2cm}
 	\resumeRow{
 		\textbf{Ford Motor Company}
 		\newline
