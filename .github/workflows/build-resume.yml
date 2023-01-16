@@ -14,10 +14,10 @@ jobs:
           args: -xelatex -file-line-error -interaction=nonstopmode
           extra_system_packages: ttf-liberation
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: resume
-          retention-days: 1
+          retention-days: 5
           path: zane_resume.pdf
   release_pdf:
     needs: build_latex
@@ -28,14 +28,12 @@ jobs:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Download PDF artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: resume
       - name: Publish resume
         run: |
-          pwd
-          ls /home/runner/work/personal_resume/personal_resume/resume
           gh release create \
             main \
             --generate-notes \
-            ./zane_resume.pdf
+            ./resume/zane_resume.pdf
