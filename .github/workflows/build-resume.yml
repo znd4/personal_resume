@@ -35,7 +35,10 @@ jobs:
         run: |
           ls -l
           gh release create \
-            main \
+            '${{ github.sha }}' \
             --repo zdog234/personal_resume \
             --generate-notes \
             zane_resume.pdf
+          gh release delete latest --yes --cleanup-tag || echo "No release to delete"
+          # set '${{ github.sha }}' release as latest
+          gh release edit '${{ github.sha }}' --tag latest --title latest
