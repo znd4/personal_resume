@@ -33,6 +33,8 @@ jobs:
           name: resume
       - name: Publish resume
         run: |
+          pwd
+          ls /home/runner/work/personal_resume/personal_resume/resume
           gh release create \
             main \
             --generate-notes \
