@@ -37,4 +37,4 @@ jobs:
           gh release create \
             main \
             --generate-notes \
-            ./resume/zane_resume.pdf
+            zane_resume.pdf
