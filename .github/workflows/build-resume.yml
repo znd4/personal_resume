@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Publish document
         if: github.ref == 'refs/heads/main'
-        with:
+        env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh release create \
