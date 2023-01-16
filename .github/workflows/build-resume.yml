@@ -27,8 +27,6 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v1
       - name: Download PDF artifact
         uses: actions/download-artifact@v3
         with:
@@ -38,6 +36,6 @@ jobs:
           ls -l
           gh release create \
             main \
+            --repo zdog234/personal_resume \
             --generate-notes \
-            --latest \
             zane_resume.pdf
