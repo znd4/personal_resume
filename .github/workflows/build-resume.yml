@@ -33,14 +33,8 @@ jobs:
           name: resume
       - name: Publish resume
         run: |
-          gh release delete \
+          gh release upload \
             latest \
-            --repo zdog234/personal_resume \
-            --yes \
-            --cleanup-tag \
-            || echo "No release to delete"
-          gh release create \
-            latest \
-            --repo zdog234/personal_resume \
-            --generate-notes \
-            zane_resume.pdf
+            --repo '${{ github.repository }}' \
+            zane_resume.pdf \
+            --clobber
