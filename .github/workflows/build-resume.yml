@@ -39,4 +39,5 @@ jobs:
           gh release create \
             main \
             --generate-notes \
+            --latest \
             zane_resume.pdf
