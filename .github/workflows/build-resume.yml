@@ -13,12 +13,7 @@ jobs:
           root_file: zane_resume.tex
           args: -xelatex -file-line-error -interaction=nonstopmode
           extra_system_packages: ttf-liberation
-  publish_document:
-    needs: build_latex
-    runs-on: ubuntu-latest
-    environment: main
-    steps:
-      - name: Publish document
+      - name: Publish resume
         if: github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
