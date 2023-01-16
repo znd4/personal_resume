@@ -35,6 +35,7 @@ jobs:
         run: |
           gh release delete \
             latest \
+            --repo zdog234/personal_resume \
             --yes \
             --cleanup-tag \
             || echo "No release to delete"
