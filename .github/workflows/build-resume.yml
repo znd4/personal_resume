@@ -33,6 +33,7 @@ jobs:
           name: resume
       - name: Publish resume
         run: |
+          ls -l
           gh release create \
             main \
             --generate-notes \
