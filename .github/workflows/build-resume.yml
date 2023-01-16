@@ -35,6 +35,7 @@ jobs:
         run: |
           gh release create \
             --latest \
+            --repo '${{ github.repository }}' \
             --title "Latest Resume" \
             --notes "Latest resume build from GitHub Actions" \
             zane_resume.pdf
