@@ -42,6 +42,7 @@ jobs:
             --latest \
             --title "Latest Resume" \
             --notes "Latest resume build from GitHub Actions" \
+            --target main \
             latest \
             zane_resume.pdf
 
