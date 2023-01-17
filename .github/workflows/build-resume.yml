@@ -33,24 +33,23 @@ jobs:
           name: resume
       - name: Publish resume
         run: |
-          gh release view latest \
-          || gh release create \
+          alias gh-release='gh release --repo ${{ github.repository }}'
+
+          gh-release view latest \
+          || gh-release create \
             --latest \
-            --repo '${{ github.repository }}' \
             --title "Latest Resume" \
             --notes "Latest resume build from GitHub Actions" \
             --target '${{ github.sha }}' \
             latest \
             zane_resume.pdf
 
-          gh release edit \
-            --repo '${{ github.repository }}' \
+          gh-release edit \
             --generate-notes \
             --target '${{ github.sha }}' \
             latest
 
-          gh release upload \
-            --repo '${{ github.repository }}' \
+          gh-release upload \
             --clobber \
             latest \
             zane_resume.pdf
