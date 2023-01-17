@@ -33,7 +33,9 @@ jobs:
           name: resume
       - name: Publish resume
         run: |
-          alias gh-release='gh release --repo ${{ github.repository }}'
+          gh-release () {
+            gh release --repo '${{ github.repository }}' "$@"
+          }
 
           gh-release view latest \
           || gh-release create \
