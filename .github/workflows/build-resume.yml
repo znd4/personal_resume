@@ -42,12 +42,10 @@ jobs:
             --latest \
             --title "Latest Resume" \
             --notes "Latest resume build from GitHub Actions" \
-            --target '${{ github.sha }}' \
             latest \
             zane_resume.pdf
 
           gh-release edit \
-            --target '${{ github.sha }}' \
             latest
 
           gh-release upload \
