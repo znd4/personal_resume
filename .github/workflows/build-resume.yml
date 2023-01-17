@@ -47,7 +47,6 @@ jobs:
             zane_resume.pdf
 
           gh-release edit \
-            --generate-notes \
             --target '${{ github.sha }}' \
             latest
 
