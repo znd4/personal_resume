@@ -47,6 +47,7 @@ jobs:
             zane_resume.pdf
 
           gh-release edit \
+            --target main \
             latest
 
           gh-release upload \
