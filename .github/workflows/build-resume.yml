@@ -12,20 +12,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: tectonic main.tex
 
-      # - name: Compilation
-      #   uses: vinay0410/tectonic-action@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tex_path: "dir/file.tex"
-
-      # - name: Compile LaTeX document
-      #   id: compile_latex
-      #   uses: xu-cheng/latex-action@master
-      #   with:
-      #     root_file: main.tex
-      #     args: -file-line-error -interaction=nonstopmode
-      #     extra_system_packages: ttf-liberation
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v3
         with:
