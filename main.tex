@@ -1,0 +1,151 @@
+%-------------------------
+% Resume Template
+% Author : Orest Tokovenko
+% Github : https://github.com/oresttokovenko
+% License : MIT
+% Type: Professional Developer
+%------------------------
+
+%-------------------------------------------------------------------------------
+%                Document & Class
+%-------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{resume_config}
+
+% NOTE: <- font size adjustment is available in the resume_config.cls file on the left hand side. ex. \LoadClass[#pt]{article} where # is 10, 11 or 12
+
+% NOTE: If you need to adjust the space between any two lines, use this function: \vspace{#pt} where # is your number. ex. \vspace{-5pt} decreases the space between lines
+
+%-------------------------------------------------------------------------------
+%                Resume Starts Here
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\Header
+    {Zane Dufour} % name
+    {Detroit, MI} % city, province
+    {310-600-8638} % phone number
+    {znd4@pm.me} % email
+    {zane-dufour-74023872} % https://linkedin.com/in/_______
+    {znd4} % https://github.com/_______
+    [znd4.github.io] % website - this parameter is optional, removing it won't impact the function's behavior
+
+%-------------------------------------------------------------------------------
+%                Work Experience
+%-------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\WorkExperience
+    {AI Senior Software Engineer} % job title
+    {Volkswagen Group of America} % company name
+    {June 2023 --- Present} % beginning and end of employment. If currently employed write " -- Present"
+    {Remote} % city, country of employment
+    {
+        \item Introducing containerized software development tools, including local kubernetes-based workflow, to decrease delta between development and deployment environments.
+        \item Building vehicle delivery prediction model.
+    } 
+
+\WorkExperience
+    {Senior Software Engineer, Backend} % job title
+    {\href{https://www.aspiration.com/}{Aspiration}} % company name
+    {January 2022 --- May 2023} % beginning and end of employment
+    {Remote} % city, country of employment
+    {
+        \item Implemented CircleCI Orb to install and run \code{pre-commit} hooks to enforce code quality tools in CI pipelines.
+        \item Introduced end-to-end tests to serverless functions using \code{sam local invoke}, ending a series of damaging incidents caused by faulty Lambda configurations being merged into \code{main} without being tested.
+        \item Spearheaded wider adoption of \textit{distributed tracing} by contributing Datadog APM Twirp middleware to the org's shared middleware library.
+        \item Used Snowflake to diagnose a low-probability bug that was causing some customers to be overcharged.
+        \item Developed customer-facing gRPC services with golang, kubernetes, terraform, and AWS Lambda.
+    }
+
+\WorkExperience
+    {Tech Lead - MLOps} % job title
+    {\href{https://www.ford.com/}{Ford Motor Company}} % company name
+    {February 2020 --- January 2022} % beginning and end of employment
+    {Dearborn, MI / Remote} % city, country of employment
+    {
+        \item Promoted use of modern python development tools, including \code{poetry}, \code{black}, \code{pre-commit}, and \code{tox}
+        \item Mentored a growing team of 5--10 Data Scientists and Software Engineers.
+        \item Designed a system to streamline the request of new pypi packages / versions, saving hundreds of labor hours. 
+        \item Built a POC \code{python} SDK for Ford's ML platform.
+        \item Deployed >10 ML models to production, using scikit-learn, tensorflow, datarobot, and xgboost.
+        \item Wrangled data with kubernetes, pandas, dask, dagster, airflow, and argo workflows.
+    }
+
+\WorkExperience
+    {Data Scientist} % job title
+    {\href{https://www.ford.com/}{Ford Motor Company}} % company name
+    {November 2017 --- February 2020} % beginning and end of employment
+    {Dearborn, MI} % city, country of employment
+    {
+        \item Used pyspark / SparkML to train and score a likelihood-to-purchase model on ~100M non-customers.
+        \item Converted ad-hoc notebooks into production-ready, version-controlled code.
+        \item Contributed a python package to simplify the process of instantiating a pyspark driver on Ford's on-prem computing cluster.
+        \item Drove adoption of test-driven-development and static code analysis for python libraries, data pipelines, and Flask services.
+    }
+
+\WorkExperience
+    {Software Engineer Intern} % job title
+    {\href{https://sites.disney.com/waltdisneyimagineering/}{Walt Disney Imagineering}} % company name
+    {June --- September 2017} % beginning and end of employment
+    {Glendale, CA} % city, country of employment
+    {
+        \item Contributed to \href{https://en.wikipedia.org/wiki/Projection_mapping}{projection mapping} software that is used by many attractions that are each worth over \$100M.
+    }
+
+\WorkExperience
+    {Software Engineer Intern} % job title
+    {\href{https://intel.com}{Intel}} % company name
+    {June --- September 2017} % beginning and end of employment
+    {Glendale, CA} % city, country of employment
+    {
+        \item Worked on desktop application used to control advanced electronics manufacturing robot.
+    }
+\vspace{-10pt}
+%-------------------------------------------------------------------------------
+%                Certifications
+%-------------------------------------------------------------------------------
+
+% \section{Certifications}
+
+% \Certification
+%     {Certified Developer - Associate} % credential name
+%     {Amazon Web Services (AWS)} % issuing institution
+%     {Aug 2021} % date of completion
+
+% \vspace{-7pt}
+%-------------------------------------------------------------------------------
+%                Education
+%-------------------------------------------------------------------------------
+
+\section{Education}
+
+\EducationExperience
+    {University of California, Berkeley} % school name
+    {BA Applied Math, BA Physics} % credential name
+    {May 2017} % date of graduation
+    {Berkeley, CA} % city, country of school
+
+\vspace{-14pt}
+%-------------------------------------------------------------------------------
+%                Skills
+%-------------------------------------------------------------------------------
+
+\section{Skills}
+
+\vspace{1pt}
+
+\SkillList{
+    \SkillItem{Languages}{: Python, Golang, Lua, Rust}
+    \SkillItem{Frameworks}{: flask, fastapi, twirp, typer (CLI)}
+    \SkillItem{Databases}{: PostgreSQL, Hive, Snowflake}
+    \SkillItem{Platforms}{: AWS, GCP, Kubernetes}
+}
+
+\end{document}
+
+%-------------------------------------------------------------------------------
+%                Resume Ends Here
+%-------------------------------------------------------------------------------

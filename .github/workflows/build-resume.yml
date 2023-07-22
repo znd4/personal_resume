@@ -10,7 +10,7 @@ jobs:
         id: compile_latex
         uses: xu-cheng/latex-action@master
         with:
-          root_file: zane_resume.tex
+          root_file: main.tex
           args: -xelatex -file-line-error -interaction=nonstopmode
           extra_system_packages: ttf-liberation
       - name: Upload PDF artifact
@@ -18,7 +18,7 @@ jobs:
         with:
           name: resume
           retention-days: 5
-          path: zane_resume.pdf
+          path: main.pdf
   release_pdf:
     needs: build_latex
     runs-on: ubuntu-latest
@@ -37,6 +37,8 @@ jobs:
             gh release --repo '${{ github.repository }}' "$@"
           }
 
+          mv main.pdf zane_resume.pdf
+
           gh-release view latest \
           || gh-release create \
             --latest \
@@ -49,6 +51,7 @@ jobs:
           gh-release edit \
             --target main \
             latest
+
 
           gh-release upload \
             --clobber \
