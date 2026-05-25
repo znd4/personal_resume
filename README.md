@@ -18,10 +18,13 @@ nix develop        # drop into a shell with tectonic + build/watch on $PATH
 
 The `release_pdf` job uses a fine-grained PAT stored as repo secret `GH_TOKEN` (the built-in `GITHUB_TOKEN` could replace it, but this repo uses a PAT). Only required scope: **Contents: Read and write** on `znd4/personal_resume`.
 
-1. Generate a new token at <https://github.com/settings/personal-access-tokens/new> (fine-grained PAT creation isn't in the `gh` CLI). Settings:
+1. Generate a new token — open this URL in a browser (fine-grained PAT creation isn't in the `gh` CLI):
+
+   <https://github.com/settings/personal-access-tokens/new?name=personal_resume%20release&contents=write>
+
+   This pre-fills the name and Contents=Read+Write. Still need to set manually:
    - **Resource owner**: `znd4`
    - **Repository access** → **Only select repositories** → `znd4/personal_resume`
-   - **Repository permissions** → **Contents**: **Read and write** (leave everything else "No access")
 
    Copy the generated token to your clipboard.
 
