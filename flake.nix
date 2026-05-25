@@ -31,7 +31,7 @@
           runtimeInputs = [ pkgs.entr build ];
           text = ''
             cd "''${RESUME_DIR:-$PWD}"
-            ls main.tex resume_config.cls | entr -c build
+            printf '%s\n' main.tex resume_config.cls | entr -c build
           '';
         };
       in
