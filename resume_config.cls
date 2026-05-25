@@ -38,8 +38,21 @@
 \RequirePackage{relsize}
 \usepackage{graphicx}
 
-% \setmainfont{TeX Gyre Heros} % adjust font style here
-\setmainfont{Liberation Sans} % adjust font style here
+% Liberation Sans loaded by file path. \LiberationFontPath is defined by the
+% Nix build wrapper (flake.nix); fall back to system lookup if unset.
+\providecommand{\LiberationFontPath}{}
+\ifx\LiberationFontPath\empty
+    \setmainfont{Liberation Sans}
+\else
+    \setmainfont{LiberationSans}[
+        Path = \LiberationFontPath ,
+        Extension = .ttf ,
+        UprightFont = *-Regular ,
+        BoldFont = *-Bold ,
+        ItalicFont = *-Italic ,
+        BoldItalicFont = *-BoldItalic ,
+    ]
+\fi
 
 % Additional fonts can be found at the following URL: https://www.draketo.de/anderes/latex-fonts.html#org9f59ea3
 
