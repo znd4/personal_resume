@@ -16,7 +16,7 @@ nix develop        # drop into a shell with tectonic + build/watch on $PATH
 
 ## Rotating the release token
 
-The `release_pdf` job uses a fine-grained PAT stored as repo secret `GH_TOKEN` (the built-in `GITHUB_TOKEN` could replace it, but this repo uses a PAT). Only required scope: **Contents: Read and write** on `znd4/personal_resume`.
+The `release_pdf` job uses a fine-grained PAT stored as `GH_TOKEN` in the `main` environment (the job has `environment: main`, so env-scoped secrets shadow repo-scoped ones) (the built-in `GITHUB_TOKEN` could replace it, but this repo uses a PAT). Only required scope: **Contents: Read and write** on `znd4/personal_resume`.
 
 1. Generate a new token — open this URL in a browser (fine-grained PAT creation isn't in the `gh` CLI):
 
@@ -31,7 +31,7 @@ The `release_pdf` job uses a fine-grained PAT stored as repo secret `GH_TOKEN` (
 2. Replace the secret and re-run the most recent failed release job:
 
    ```sh
-   pbpaste | gh secret set GH_TOKEN --repo znd4/personal_resume
+   pbpaste | gh secret set GH_TOKEN --repo znd4/personal_resume --env main
    gh run list --repo znd4/personal_resume --workflow build-resume.yml --status failure --limit 1 \
      --json databaseId --jq '.[0].databaseId' \
      | xargs -I{} gh run rerun {} --repo znd4/personal_resume --failed
