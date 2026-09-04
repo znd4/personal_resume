@@ -117,7 +117,7 @@
         \textbf{#1} & \textit{#3} \\
         #2 & #4 \\
     \end{tabular*}
-    
+    \vspace{-7pt}
     \begin{itemize}[noitemsep, topsep=0pt, leftmargin=1em]
         #5
     \end{itemize}

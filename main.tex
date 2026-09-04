@@ -41,14 +41,39 @@
 \section{Work Experience}
 
 \WorkExperience
-    {AI Senior Software Engineer} % job title
-    {Volkswagen Group of America} % company name
-    {June 2023 --- Present} % beginning and end of employment. If currently employed write " -- Present"
+    {Senior Staff DevOps Engineer} % job title
+    {\href{https://www.paloaltonetworks.com/}{Palo Alto Networks}} % company name
+    {July 2025 --- Present} % beginning and end of employment. If currently employed write " -- Present"
     {Remote} % city, country of employment
     {
-        \item Built cloud-native ML application development platform. Deployed k8s, ArgoCD, kubeflow, and opentelemetry.
-        \item Migrated docker-compose development environments to k8s using skaffold and jsonnet.
-    } 
+        \item In first year, built and drove adoption of platform teams use to provision their own GKE clusters, networking, and control plane --- now 90+ clusters across 8 product teams, from Config Connector resources delivered by opinionated ArgoCD ApplicationSets.
+        \item Stood up the FedRAMP-boundary environment: isolated CI, workload identity federation, FIPS images, and mirrored registries.
+        \item Maintain the 40+ versioned, unit-tested Helm charts every product team deploys from.
+        \item Wrote a Go Terraform provider for an internal networking API, replacing change tickets with reviewable IaC.
+        \item Automated org-wide CVE remediation (Renovate) and cluster policy enforcement (Kubewarden).
+    }
+
+\WorkExperience
+    {Senior Platform Engineer} % job title
+    {\href{https://protectai.com/}{Protect AI} (acquired by Palo Alto Networks)} % company name
+    {May 2024 --- July 2025} % beginning and end of employment
+    {Remote} % city, country of employment
+    {
+        \item Built and operated the EKS platform --- Terraform modules, Karpenter, ArgoCD, external-secrets, Keycloak.
+        \item Shipped an air-gapped distribution so customers could run the whole platform inside their own network.
+        \item Built the container supply chain: image builds, pull-through caches, and a Trivy pipeline that aggregated CVE findings across every chart.
+        \item Authored the shared CI action library used across the engineering org.
+    }
+
+\WorkExperience
+    {AI Senior Software Engineer} % job title
+    {Volkswagen Group of America} % company name
+    {June 2023 --- May 2024} % beginning and end of employment
+    {Remote} % city, country of employment
+    {
+        \item Built a cloud-native ML application platform on Kubernetes with ArgoCD, Kubeflow, and OpenTelemetry.
+        \item Migrated development environments from docker-compose to Kubernetes with Skaffold and Jsonnet.
+    }
 
 \WorkExperience
     {Senior Software Engineer, Backend} % job title
@@ -56,38 +81,20 @@
     {January 2022 --- May 2023} % beginning and end of employment
     {Remote} % city, country of employment
     {
-        \item Implemented CircleCI Orb to install and run \code{pre-commit} hooks to enforce code quality tools in CI pipelines.
-        \item Introduced end-to-end tests to serverless functions using \code{sam local invoke}, ending a series of damaging incidents caused by faulty Lambda configurations being merged into \code{main} without being tested.
-        \item Spearheaded wider adoption of \textit{distributed tracing} by contributing Datadog APM Twirp middleware to the org's shared middleware library.
-        \item Used Snowflake to diagnose a low-probability bug that was causing some customers to be overcharged.
-        \item Created Backstage onboarding workflow to streamline adoption of the new development platform.
-        \item Developed customer-facing gRPC services with golang, kubernetes, terraform, and AWS Lambda.
+        \item Introduced end-to-end tests for serverless functions with \code{sam local invoke}, ending a run of incidents caused by untested Lambda configs reaching \code{main}.
+        \item Drove adoption of \textit{distributed tracing} by adding Datadog APM middleware to the org's shared Twirp library.
+        \item Developed customer-facing gRPC services with Go, Kubernetes, Terraform, and AWS Lambda.
     }
 
 \WorkExperience
-    {Tech Lead - MLOps} % job title
+    {Data Scientist $\rightarrow$ Tech Lead, MLOps} % job title
     {\href{https://www.ford.com/}{Ford Motor Company}} % company name
-    {February 2020 --- January 2022} % beginning and end of employment
+    {November 2017 --- January 2022} % beginning and end of employment
     {Dearborn, MI / Remote} % city, country of employment
     {
-        \item Promoted use of modern python development tools, including \code{poetry}, \code{black}, \code{pre-commit}, and \code{tox}
-        \item Mentored a growing team of 5--10 Data Scientists and Software Engineers.
-        \item Designed a system to streamline the request of new pypi packages / versions, saving hundreds of labor hours. 
-        \item Built a POC python SDK for Ford's ML platform.
-        \item Deployed >10 ML models to production, using scikit-learn, tensorflow, datarobot, and xgboost.
-        \item Wrangled data with kubernetes, pandas, dask, dagster, airflow, and argo workflows.
-    }
-
-\WorkExperience
-    {Data Scientist} % job title
-    {\href{https://www.ford.com/}{Ford Motor Company}} % company name
-    {November 2017 --- February 2020} % beginning and end of employment
-    {Dearborn, MI} % city, country of employment
-    {
-        \item Used pyspark / SparkML to train and score a likelihood-to-purchase model on ~100M non-customers.
-        \item Converted ad-hoc notebooks into production-ready, version-controlled code.
-        \item Contributed a python package to simplify the process of instantiating a pyspark driver on Ford's on-prem computing cluster.
-        \item Drove adoption of test-driven-development and static code analysis for python libraries, data pipelines, and Flask services.
+        \item Mentored a team of 5--10 data scientists and software engineers.
+        \item Deployed 10+ ML models to production with scikit-learn, TensorFlow, XGBoost, and DataRobot.
+        \item Trained and scored a likelihood-to-purchase model on roughly 100M non-customers with PySpark / SparkML.
     }
 
 \WorkExperience
@@ -96,16 +103,16 @@
     {June --- September 2017} % beginning and end of employment
     {Glendale, CA} % city, country of employment
     {
-        \item Contributed to \href{https://en.wikipedia.org/wiki/Projection_mapping}{projection mapping} software that is used by many attractions that are each worth over \$100M.
+        \item Contributed to \href{https://en.wikipedia.org/wiki/Projection_mapping}{projection mapping} software, and built its CI system, for Disney parks and resorts.
     }
 
 \WorkExperience
     {Software Engineer Intern} % job title
     {\href{https://intel.com}{Intel}} % company name
-    {June --- September 2017} % beginning and end of employment
-    {Glendale, CA} % city, country of employment
+    {February --- August 2016} % beginning and end of employment
+    {Santa Clara, CA} % city, country of employment
     {
-        \item Worked on desktop application used to control advanced electronics manufacturing robot.
+        \item Contributed to the desktop control application for manufacturing robots in the Silicon Photonics group.
     }
 \vspace{-10pt}
 %-------------------------------------------------------------------------------
@@ -143,9 +150,9 @@
 
 \SkillList{
     \SkillItem{Languages}{: Python, Golang, Lua, Nix, C\texttt{++}, Rust}
-    \SkillItem{Frameworks}{: flask, fastapi, twirp, typer (CLI)}
-    \SkillItem{Databases}{: PostgreSQL, Hive, Snowflake}
-    \SkillItem{Platforms}{: AWS, GCP, Kubernetes}
+    \SkillItem{Infrastructure}{: Kubernetes (GKE, EKS), Terraform / OpenTofu, terragrunt, Helm, ArgoCD, AWS, GCP}
+    \SkillItem{Frameworks}{: Flask, FastAPI, Twirp, Typer (CLI)}
+    \SkillItem{Databases}{: PostgreSQL, Snowflake}
 }
 
 \end{document}
